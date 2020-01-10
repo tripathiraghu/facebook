@@ -1,0 +1,88 @@
+ html, body {
+        height: 100%;
+        margin: 0px;
+}
+
+
+
+.header
+{
+	display:flex;
+	color: white;
+	margin: 0px;
+	background-color: #1c0f11;
+
+}
+
+.logo{
+	padding-left: 50px;
+	align-items: left;
+	padding-top: 20px;
+	/*font-family: 'Ma Shan Zheng', cursive;*/
+font-family: 'Leckerli One', cursive;
+	font-size: 45PX;
+
+}
+
+
+
+.row .left{
+	background-color: white;
+	color: black;
+
+
+	
+}
+.row .left .top {
+
+color: #1c0f11;
+padding:20%;
+font-family: 'Sniglet', cursive;
+
+
+}
+
+.row .left .top .p{
+
+font-family: 'Lato', sans-serif;
+padding-left: 12px;
+
+
+}
+
+.row .left .top i{
+padding-bottom: 45px;
+
+
+
+}
+
+
+
+
+.row .right{
+	background-color: #1c0f11;
+	color: white;
+
+
+}
+
+
+.row .right .box{
+/*	background-color: #b7001d;
+	color: white;*/
+	align-items: center;
+	border: 7px white solid;
+	border-radius: 12px;	
+	margin: 80px;
+	margin-top: 10px;
+
+}
+.row .right .box .form-row{
+
+margin-left: 10%;
+margin-right: 10%;
+}
+
+
+/*styles for feed page*/
