@@ -21,8 +21,7 @@ $username = $_COOKIE['fname'];
 
 <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
 
-
-
+<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 <style type="text/css">
 	body{
 		background-color: #e9ebee;
@@ -87,6 +86,23 @@ font-size: 12px;
 		background-color: #4ff628;
 		padding-bottom: 2%;
 	}
+
+
+	.friendsListDisplay{
+		display: flex;
+		padding: 3%;
+
+	}
+	.friendsListDisplay img{
+		height: 35px;
+		width: 35px;
+		border-radius: 20px;
+	}
+
+	..friendsListDisplay p{
+		padding-left: 5%;
+		font-size: auto;
+	}
 </style>
 </head>
 <body>
@@ -135,13 +151,37 @@ font-size: 12px;
 <div class="container" style="margin-top: 7%;">
 <div class="row">
 	
-<div class="left col-2" style="padding: 1%;">
-	<div class="displayName" style="display: flex;">
+<div class="left col-2" style="padding: 1%;background-color:#e9ebee; ">
+	<!-- display name with user profile -->
+	<div class="displayName" style="display: flex; background-color:white; color:black ;border-radius: 20px;">
 		<img src=" <?php echo $_SESSION['profileImage']; ?>" style="height: 44px; width: 44px; border-radius: 50px;">
-		<a href="#" style="font-size:17px; padding-left: 4%; padding-top: 2% "> <?php echo $username; ?></a>
+		<a href="#" style="font-size:15px; padding-left: 4%; padding-top: 2	% "> <?php echo $username; ?></a>
 </div>
-<div class="friendsList">
-<p style="text-align: center;">Friends List</p>
+
+
+<!-- friends list -->
+<div class="friendsList" style="background-color:white; color:black ;border-radius: 20px; display: block;">
+<p style="text-align: center; font-size: 20px; font-weight:400;background-color: black;color: white; border-radius: 20px 0px 20px 0px; font-family: 'Lobster', cursive;">Friends List</p>
+<!-- friend list fetching form database -->
+
+<?php
+
+include 'connection.php';
+$sql_tab = "SELECT * FROM post  ORDER BY sno DESC";
+$dt = mysqli_query($con, $sql_tab);
+$s = mysqli_num_rows($dt);
+while ($row = mysqli_fetch_array($dt, MYSQLI_ASSOC)) {
+$name = $row['username'];
+$proflieImage = $row['profileImage'];
+echo "<div class="."friendsListDisplay".">";
+echo "<img src = ".$proflieImage.">";
+echo "<p>".$name."</p>";
+echo "</div>";
+}
+?>
+
+
+
 
 </div>
 </div>
