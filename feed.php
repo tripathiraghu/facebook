@@ -99,9 +99,11 @@ font-size: 12px;
 		border-radius: 20px;
 	}
 
-	..friendsListDisplay p{
-		padding-left: 5%;
-		font-size: auto;
+	.friendsListDisplay p{
+		padding-left: 1%;
+		padding-top: 0%;
+		line-height: 1em;
+		/*font-size: auto;*/
 	}
 </style>
 </head>
@@ -162,21 +164,30 @@ font-size: 12px;
 <!-- friends list -->
 <div class="friendsList" style="background-color:white; color:black ;border-radius: 20px; display: block;">
 <p style="text-align: center; font-size: 20px; font-weight:400;background-color: black;color: white; border-radius: 20px 0px 20px 0px; font-family: 'Lobster', cursive;">Friends List</p>
+
 <!-- friend list fetching form database -->
 
 <?php
 
 include 'connection.php';
-$sql_tab = "SELECT * FROM post  ORDER BY sno DESC";
+$sql_tab = "SELECT * FROM userdetail  ORDER BY sno DESC";
 $dt = mysqli_query($con, $sql_tab);
 $s = mysqli_num_rows($dt);
 while ($row = mysqli_fetch_array($dt, MYSQLI_ASSOC)) {
-$name = $row['username'];
+$name = $row['name'];
 $proflieImage = $row['profileImage'];
-echo "<div class="."friendsListDisplay".">";
+
+if ($name== $username) {
+
+
+}
+else{
+	echo "<div class="."friendsListDisplay".">";
 echo "<img src = ".$proflieImage.">";
 echo "<p>".$name."</p>";
 echo "</div>";
+echo "<hr>";
+}
 }
 ?>
 
