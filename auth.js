@@ -15,7 +15,7 @@ function phoneAuth() {
         window.confirmationResult=confirmationResult;
         coderesult=confirmationResult;
         console.log(coderesult);
-        
+        window.location.href = "verify.html";
     }).catch(function (error) {
         alert(error.message);
     });
@@ -26,6 +26,7 @@ function codeverify() {
         alert("Successfully registered");
         var user=result.user;
         console.log(user);
+        window.location.href = "feed.php";
     }).catch(function (error) {
         alert(error.message);
     });

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>otp</title>
+</head>
+<body>
+<h1>Enter Verification code</h1>
+<form>
+    <input type="text" id="verificationCode" placeholder="# # # # # #">
+    <button type="button" onclick="codeverify();">Verify</button>
+
+</form>
+
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script> -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCGWcJGg_QASq8XGXMUaeRgw1L16MUWRyE",
+    authDomain: "thefacebook-eb660.firebaseapp.com",
+    databaseURL: "https://thefacebook-eb660.firebaseio.com",
+    projectId: "thefacebook-eb660",
+    storageBucket: "thefacebook-eb660.appspot.com",
+    messagingSenderId: "1086369885576",
+    appId: "1:1086369885576:web:fc7cadb890b754b7a01e3d",
+    measurementId: "G-5BK2NETLHG"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script type="text/javascript">
+//	window.onload=function () {
+//  render();
+//};
+//function render() {
+  //  window.recaptchaVerifier=new firebase.auth.RecaptchaVerifier('recaptcha-container');
+    //recaptchaVerifier.render();
+//}
+// function phoneAuth() {
+//     //get the number
+//     var number=document.getElementById('number').value;
+//     //phone number authentication function of firebase
+//     //it takes two parameter first one is number,,,second one is recaptcha
+//     firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier).then(function (confirmationResult) {
+//         //s is in lowercase
+//         window.confirmationResult=confirmationResult;
+//         coderesult=confirmationResult;
+//         console.log(coderesult);
+//         window.location.href = "verify.html";
+//     }).catch(function (error) {
+//         alert(error.message);
+//     });
+// }
+function codeverify() {
+    var code=document.getElementById('verificationCode').value;
+    coderesult = sessionStorage.getItem('codecarry');
+    coderesult.confirm(code).then(function (result) {
+        alert("Successfully registered");
+        var user=result.user;
+        console.log(user);
+    }).catch(function (error) {
+        alert(error.message);
+    });
+}
+</script>
+
+</body>
+</html>
