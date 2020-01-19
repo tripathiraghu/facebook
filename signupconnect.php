@@ -40,7 +40,7 @@ $_SESSION['name']=$name;
 
 
 
-header ("location:feed.php");
+header ("location:photoUpload.php");
 
 
 }

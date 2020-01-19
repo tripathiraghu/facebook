@@ -20,7 +20,8 @@ echo "Name ";
 
 echo $row['name'];
 $fname=$row['name'];
-
+ echo $row['sno'];
+ $sno = $row['sno'];
 
 
 echo "  Email ";
@@ -39,6 +40,10 @@ $_SESSION['email']=$_COOKIE['testing'];
 $_SESSION ['name'] = $fname ;
 setcookie("fname", $_SESSION['name'], time() +60*60*365 );
 $_SESSION ['Name'] = $_COOKIE['fname'];
+
+$sno=$_COOKIE['sno'];
+
+
 
 }
 

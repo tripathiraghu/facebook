@@ -135,7 +135,7 @@ font-size: 12px;
 <a href="feed.php" style="color: white;">Home </a>|
 <a href="profile.php" style="color: white;">Profile </a>|
 <a href="Settings.php" style="color: white;">Settings </a>|
-<a href="Logout.php" style="color: white;"	>Logout</a>
+<a href="logout.php" style="color: white;"	>Logout</a>
 
 
 
