@@ -76,7 +76,7 @@
 30%;" align="center">
 <h1>Enter Your Number</h1>
 <form>
-    <input type="text" class="inputBar" id="number" placeholder="+91876*******">
+    <input type="text" class="inputBar" id="number" name="mobileNumber" placeholder="+91876*******">
     <div id="recaptcha-container" ></div>
     <br>
     <br>
@@ -157,6 +157,22 @@ function codeverify() {
         alert(error.message);
     });
 }
+
+
+
+// mobile number upload to php databse
+// function mob(){
+// $.ajax({
+//         url: "save.php",
+//         type: "POST",
+//         data: {
+//           numbers: document.getElementById('number').value;
+//         }
+
+// }
+
+
+
 </script>
 
 

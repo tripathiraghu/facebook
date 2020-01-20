@@ -34,6 +34,7 @@ $sql_tab="insert into  userdetail (name, email, password) values ('$name','$emai
 mysqli_query($con,$sql_tab);
 
 $_SESSION['name']=$name;
+$_SESSION['email']=$email;
 
 
 

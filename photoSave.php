@@ -2,10 +2,10 @@
 session_start();
 include 'connection.php';
 $username = $_COOKIE['fname'];
-$sno = $_COOKIE['sno'];
-
-
-
+$email=$_SESSION['email'];
+$photos="images/user-image/". $_FILES["fileToUpload"]["name"];
+echo $_FILES["fileToUpload"]["name"]."<br>";
+echo $email;
 // photo upload
 
 
@@ -63,19 +63,7 @@ if ($uploadOk == 0) {
 
 
 
-
-
-
-
-
-
-$photos=$_POST['photos'];
-
-
-
-
-
-$sql_tab="INSERT INTO `userdetail`(`profileImage`) VALUES ('$photos') where name =='$username' " ;
+$sql_tab="UPDATE userdetail SET profileImage ='$photos' WHERE email='$email'";
 mysqli_query($con,$sql_tab);
 
 if (mysqli_connect_errno())
@@ -84,7 +72,6 @@ if (mysqli_connect_errno())
 
   }
   else{
-  	
   	header ("location: mobileVerification.php");
   }
  

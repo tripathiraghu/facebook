@@ -26,13 +26,10 @@ $username = $_COOKIE['fname'];
 	<h1>Upload Your Profile Picture</h1>
 <form method="post" action="photoSave.php" name="fr1" enctype="multipart/form-data">
 <div class="form-group">
-<div class="container" style="margin-top: 1%; width: 50%; border: 1px solid grey; padding: 4%; border-radius: 10px; text-align: center;">
-	<input type="file" name="fileToUpload" id="fileToUpload">
-
-	</div>
-
+<div class="container" style="margin-top: 1%; width: 50%; border: 1px solid grey; padding: 1%; border-radius: 10px; text-align: center;">
+	<input type="file" name="fileToUpload" id="fileToUpload" >
 	<button class="btn btn-primary btn-lg" type="submit" value="Upload Image" name="submit"> Upload</button>
-
+</div>
 </div>
 
 
